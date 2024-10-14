@@ -1,0 +1,124 @@
+madsheptian@DESKTOP-5G3MJ3B:~$ nano labsuser.pem
+madsheptian@DESKTOP-5G3MJ3B:~$ chmod 400 labsuser2.pem
+madsheptian@DESKTOP-5G3MJ3B:~$ ssh -i labsuser2.pem ec2-user@54.186.107.91
+The authenticity of host '54.186.107.91 (54.186.107.91)' can't be established.
+ED25519 key fingerprint is SHA256:BKT1QDSqJ6SkvWh1GZwmqs+A/1jYkqwDvFhAUCzunaI.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '54.186.107.91' (ED25519) to the list of known hosts.
+   ,     #_
+   ~\_  ####_        Amazon Linux 2
+  ~~  \_#####\
+  ~~     \###|       AL2 End of Life is 2025-06-30.
+  ~~       \#/ ___
+   ~~       V~' '->
+    ~~~         /    A newer version of Amazon Linux is available!
+      ~~._.   _/
+         _/ _/       Amazon Linux 2023, GA and supported until 2028-03-15.
+       _/m/'           https://aws.amazon.com/linux/amazon-linux-2023/
+
+[ec2-user@ip-10-0-10-22 ~]$ pwd
+/home/ec2-user
+[ec2-user@ip-10-0-10-22 ~]$ mkdir CompanyA
+[ec2-user@ip-10-0-10-22 ~]$ cd CompanyA
+[ec2-user@ip-10-0-10-22 CompanyA]$ mkdir Finance HR Management
+[ec2-user@ip-10-0-10-22 CompanyA]$ ls
+Finance  HR  Management
+[ec2-user@ip-10-0-10-22 CompanyA]$ cd HR
+[ec2-user@ip-10-0-10-22 HR]$ touch Assessments.csv
+[ec2-user@ip-10-0-10-22 HR]$ touch TrialPeriod.csv
+[ec2-user@ip-10-0-10-22 HR]$ ls
+Assessments.csv  TrialPeriod.csv
+[ec2-user@ip-10-0-10-22 HR]$ cd ..
+[ec2-user@ip-10-0-10-22 CompanyA]$ cd Finance
+[ec2-user@ip-10-0-10-22 Finance]$ touch Profit...csv
+[ec2-user@ip-10-0-10-22 Finance]$ touch Salary.csv
+[ec2-user@ip-10-0-10-22 Finance]$ cd ..
+[ec2-user@ip-10-0-10-22 CompanyA]$ cd Management/
+[ec2-user@ip-10-0-10-22 Management]$ touch Managers.csv
+[ec2-user@ip-10-0-10-22 Management]$ touch Schedule.csv
+[ec2-user@ip-10-0-10-22 Management]$ cd ..
+[ec2-user@ip-10-0-10-22 CompanyA]$ ls
+Finance  HR  Management
+[ec2-user@ip-10-0-10-22 CompanyA]$ cd Finance/
+[ec2-user@ip-10-0-10-22 Finance]$ touch ProfitAndLossStatements.csv
+[ec2-user@ip-10-0-10-22 Finance]$ ls
+Profit...csv  ProfitAndLossStatements.csv  Salary.csv
+[ec2-user@ip-10-0-10-22 Finance]$ rm Profit...csv
+[ec2-user@ip-10-0-10-22 Finance]$ ls
+ProfitAndLossStatements.csv  Salary.csv
+[ec2-user@ip-10-0-10-22 Finance]$ cd ..
+[ec2-user@ip-10-0-10-22 CompanyA]$ cd ..
+[ec2-user@ip-10-0-10-22 ~]$ cd CompanyA/
+[ec2-user@ip-10-0-10-22 CompanyA]$ ls -laR
+.:
+total 0
+drwxrwxr-x 5 ec2-user ec2-user 49 Oct 14 03:20 .
+drwx------ 4 ec2-user ec2-user 90 Oct 14 03:19 ..
+drwxrwxr-x 2 ec2-user ec2-user 59 Oct 14 03:26 Finance
+drwxrwxr-x 2 ec2-user ec2-user 52 Oct 14 03:21 HR
+drwxrwxr-x 2 ec2-user ec2-user 46 Oct 14 03:22 Management
+
+./Finance:
+total 0
+drwxrwxr-x 2 ec2-user ec2-user 59 Oct 14 03:26 .
+drwxrwxr-x 5 ec2-user ec2-user 49 Oct 14 03:20 ..
+-rw-rw-r-- 1 ec2-user ec2-user  0 Oct 14 03:24 ProfitAndLossStatements.csv
+-rw-rw-r-- 1 ec2-user ec2-user  0 Oct 14 03:22 Salary.csv
+
+./HR:
+total 0
+drwxrwxr-x 2 ec2-user ec2-user 52 Oct 14 03:21 .
+drwxrwxr-x 5 ec2-user ec2-user 49 Oct 14 03:20 ..
+-rw-rw-r-- 1 ec2-user ec2-user  0 Oct 14 03:20 Assessments.csv
+-rw-rw-r-- 1 ec2-user ec2-user  0 Oct 14 03:21 TrialPeriod.csv
+
+./Management:
+total 0
+drwxrwxr-x 2 ec2-user ec2-user 46 Oct 14 03:22 .
+drwxrwxr-x 5 ec2-user ec2-user 49 Oct 14 03:20 ..
+-rw-rw-r-- 1 ec2-user ec2-user  0 Oct 14 03:22 Managers.csv
+-rw-rw-r-- 1 ec2-user ec2-user  0 Oct 14 03:22 Schedule.csv
+[ec2-user@ip-10-0-10-22 CompanyA]$ pwd
+/home/ec2-user/CompanyA
+[ec2-user@ip-10-0-10-22 CompanyA]$ cp -r Finance/ HR
+[ec2-user@ip-10-0-10-22 CompanyA]$ ls HR
+Assessments.csv  Finance  TrialPeriod.csv
+[ec2-user@ip-10-0-10-22 CompanyA]$ rmdir Finance
+rmdir: failed to remove ‘Finance’: Directory not empty
+[ec2-user@ip-10-0-10-22 CompanyA]$ rm Finance/ProfitAndLossStatements.csv Finance/Salary.csv
+[ec2-user@ip-10-0-10-22 CompanyA]$ ls Finance/
+[ec2-user@ip-10-0-10-22 CompanyA]$ rmdir Finance/
+[ec2-user@ip-10-0-10-22 CompanyA]$ ls
+HR  Management
+[ec2-user@ip-10-0-10-22 CompanyA]$ mv Management/ HR
+[ec2-user@ip-10-0-10-22 CompanyA]$ ls . Management/HR
+ls: cannot access Management/HR: No such file or directory
+.:
+HR
+[ec2-user@ip-10-0-10-22 CompanyA]$ ls . HR/Management
+.:
+HR
+
+HR/Management:
+Managers.csv  Schedule.csv
+[ec2-user@ip-10-0-10-22 CompanyA]$ cd HR
+[ec2-user@ip-10-0-10-22 HR]$ mkdir Employees
+[ec2-user@ip-10-0-10-22 HR]$ mv Assessments.csv TrialPeriod.csv
+[ec2-user@ip-10-0-10-22 HR]$ ls Employees/
+[ec2-user@ip-10-0-10-22 HR]$ ls . Employees/
+.:
+Employees  Finance  Management  TrialPeriod.csv
+
+Employees/:
+[ec2-user@ip-10-0-10-22 HR]$ mv TrialPeriod.csv Employees/
+[ec2-user@ip-10-0-10-22 HR]$ ls . Employees/
+.:
+Employees  Finance  Management
+
+Employees/:
+TrialPeriod.csv
+[ec2-user@ip-10-0-10-22 HR]$ pwd
+/home/ec2-user/CompanyA/HR
+[ec2-user@ip-10-0-10-22 HR]$ Connection to 54.186.107.91 closed by remote host.
+Connection to 54.186.107.91 closed.
