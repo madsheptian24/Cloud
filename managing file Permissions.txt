@@ -1,0 +1,163 @@
+madsheptian@DESKTOP-5G3MJ3B:~$ nano labsuser4.pem
+madsheptian@DESKTOP-5G3MJ3B:~$ chmod 400 labsuser4.pem
+madsheptian@DESKTOP-5G3MJ3B:~$ ssh -i labsuser4.pem ec2-user@52.13.53.154
+The authenticity of host '52.13.53.154 (52.13.53.154)' can't be established.
+ED25519 key fingerprint is SHA256:RE2r9gQRpEAupKflU1I33pj+It1qkSY2wBD7lkOKYS0.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '52.13.53.154' (ED25519) to the list of known hosts.
+   ,     #_
+   ~\_  ####_        Amazon Linux 2
+  ~~  \_#####\
+  ~~     \###|       AL2 End of Life is 2025-06-30.
+  ~~       \#/ ___
+   ~~       V~' '->
+    ~~~         /    A newer version of Amazon Linux is available!
+      ~~._.   _/
+         _/ _/       Amazon Linux 2023, GA and supported until 2028-03-15.
+       _/m/'           https://aws.amazon.com/linux/amazon-linux-2023/
+
+[ec2-user@ip-10-0-10-33 ~]$ cd CompanyA
+-bash: cd: CompanyA: No such file or directory
+[ec2-user@ip-10-0-10-33 ~]$ ls
+companyA
+[ec2-user@ip-10-0-10-33 ~]$ cd companyA
+[ec2-user@ip-10-0-10-33 companyA]$ sudo chown -R mjackson:Personnel /home/ec2-user/companyA
+[ec2-user@ip-10-0-10-33 companyA]$ sudo chown -R ljuan:HR HR
+[ec2-user@ip-10-0-10-33 companyA]$ sudo chown -R mmajor:Finance HR/Finance
+[ec2-user@ip-10-0-10-33 companyA]$ ls -laR
+.:
+total 0
+drwxr-xr-x 10 mjackson Personnel 147 Oct 15 03:49 .
+drwx------  4 ec2-user ec2-user   90 Oct 15 03:49 ..
+drwxr-xr-x  2 mjackson Personnel   6 Oct 15 03:49 CEO
+drwxr-xr-x  2 mjackson Personnel   6 Oct 15 03:49 Documents
+drwxr-xr-x  2 mjackson Personnel   6 Oct 15 03:49 Employees
+drwxr-xr-x  6 ljuan    HR         72 Oct 15 03:49 HR
+drwxr-xr-x  2 mjackson Personnel   6 Oct 15 03:49 Management
+-rw-r--r--  1 mjackson Personnel   0 Oct 15 03:49 Roster.csv
+drwxr-xr-x  2 mjackson Personnel   6 Oct 15 03:49 Sales
+drwxr-xr-x  2 mjackson Personnel  24 Oct 15 03:49 SharedFolders
+drwxr-xr-x  2 mjackson Personnel   6 Oct 15 03:49 Shipping
+
+./CEO:
+total 0
+drwxr-xr-x  2 mjackson Personnel   6 Oct 15 03:49 .
+drwxr-xr-x 10 mjackson Personnel 147 Oct 15 03:49 ..
+
+./Documents:
+total 0
+drwxr-xr-x  2 mjackson Personnel   6 Oct 15 03:49 .
+drwxr-xr-x 10 mjackson Personnel 147 Oct 15 03:49 ..
+
+./Employees:
+total 0
+drwxr-xr-x  2 mjackson Personnel   6 Oct 15 03:49 .
+drwxr-xr-x 10 mjackson Personnel 147 Oct 15 03:49 ..
+
+./HR:
+total 0
+drwxr-xr-x  6 ljuan    HR         72 Oct 15 03:49 .
+drwxr-xr-x 10 mjackson Personnel 147 Oct 15 03:49 ..
+drwxr-xr-x  2 ljuan    HR         84 Oct 15 03:49 Employees
+drwxr-xr-x  2 mmajor   Finance   105 Oct 15 03:49 Finance
+drwxr-xr-x  2 ljuan    HR        140 Oct 15 03:49 Management
+drwxr-xr-x  2 ljuan    HR         52 Oct 15 03:49 NewHires
+
+./HR/Employees:
+total 0
+drwxr-xr-x 2 ljuan HR 84 Oct 15 03:49 .
+drwxr-xr-x 6 ljuan HR 72 Oct 15 03:49 ..
+-rw-r--r-- 1 ljuan HR  0 Oct 15 03:49 Layoffs.csv
+-rw-r--r-- 1 ljuan HR  0 Oct 15 03:49 MonthlyAssessments.csv
+-rw-r--r-- 1 ljuan HR  0 Oct 15 03:49 YearlyAssessments.csv
+
+./HR/Finance:
+total 0
+drwxr-xr-x 2 mmajor Finance 105 Oct 15 03:49 .
+drwxr-xr-x 6 ljuan  HR       72 Oct 15 03:49 ..
+-rw-r--r-- 1 mmajor Finance   0 Oct 15 03:49 Hourly.csv
+-rw-r--r-- 1 mmajor Finance   0 Oct 15 03:49 IncomeGeneration.csv
+-rw-r--r-- 1 mmajor Finance   0 Oct 15 03:49 ProfitAndLossStatements.csv
+-rw-r--r-- 1 mmajor Finance   0 Oct 15 03:49 Salary.csv
+
+./HR/Management:
+total 0
+drwxr-xr-x 2 ljuan HR 140 Oct 15 03:49 .
+drwxr-xr-x 6 ljuan HR  72 Oct 15 03:49 ..
+-rw-r--r-- 1 ljuan HR   0 Oct 15 03:49 Losses.csv
+-rw-r--r-- 1 ljuan HR   0 Oct 15 03:49 Managers.csv
+-rw-r--r-- 1 ljuan HR   0 Oct 15 03:49 Orders.csv
+-rw-r--r-- 1 ljuan HR   0 Oct 15 03:49 Profits.csv
+-rw-r--r-- 1 ljuan HR   0 Oct 15 03:49 Repairs.csv
+-rw-r--r-- 1 ljuan HR   0 Oct 15 03:49 Schedule.csv
+-rw-r--r-- 1 ljuan HR   0 Oct 15 03:49 Sections.csv
+
+./HR/NewHires:
+total 0
+drwxr-xr-x 2 ljuan HR 52 Oct 15 03:49 .
+drwxr-xr-x 6 ljuan HR 72 Oct 15 03:49 ..
+-rw-r--r-- 1 ljuan HR  0 Oct 15 03:49 Assessments.csv
+-rw-r--r-- 1 ljuan HR  0 Oct 15 03:49 TrialPeriod.csv
+
+./Management:
+total 0
+drwxr-xr-x  2 mjackson Personnel   6 Oct 15 03:49 .
+drwxr-xr-x 10 mjackson Personnel 147 Oct 15 03:49 ..
+
+./Sales:
+total 0
+drwxr-xr-x  2 mjackson Personnel   6 Oct 15 03:49 .
+drwxr-xr-x 10 mjackson Personnel 147 Oct 15 03:49 ..
+
+./SharedFolders:
+total 0
+drwxr-xr-x  2 mjackson Personnel  24 Oct 15 03:49 .
+drwxr-xr-x 10 mjackson Personnel 147 Oct 15 03:49 ..
+-rw-r--r--  1 mjackson Personnel   0 Oct 15 03:49 logins.csv
+
+./Shipping:
+total 0
+drwxr-xr-x  2 mjackson Personnel   6 Oct 15 03:49 .
+drwxr-xr-x 10 mjackson Personnel 147 Oct 15 03:49 ..
+[ec2-user@ip-10-0-10-33 companyA]$ pwd
+/home/ec2-user/companyA
+[ec2-user@ip-10-0-10-33 companyA]$ sudo vi symbolic_mode_file
+[ec2-user@ip-10-0-10-33 companyA]$ sudo chmod g+w symbolic_mode_file
+[ec2-user@ip-10-0-10-33 companyA]$ sudo vi absolute_mode_file
+[ec2-user@ip-10-0-10-33 companyA]$ sudo chmod 764 absolute_mode_file
+[ec2-user@ip-10-0-10-33 companyA]$ ls -l
+total 8
+drwxr-xr-x 2 mjackson Personnel  6 Oct 15 03:49 CEO
+drwxr-xr-x 2 mjackson Personnel  6 Oct 15 03:49 Documents
+drwxr-xr-x 2 mjackson Personnel  6 Oct 15 03:49 Employees
+drwxr-xr-x 6 ljuan    HR        72 Oct 15 03:49 HR
+drwxr-xr-x 2 mjackson Personnel  6 Oct 15 03:49 Management
+-rw-r--r-- 1 mjackson Personnel  0 Oct 15 03:49 Roster.csv
+drwxr-xr-x 2 mjackson Personnel  6 Oct 15 03:49 Sales
+drwxr-xr-x 2 mjackson Personnel 24 Oct 15 03:49 SharedFolders
+drwxr-xr-x 2 mjackson Personnel  6 Oct 15 03:49 Shipping
+-rwxrw-r-- 1 root     root       6 Oct 15 03:56 absolute_mode_file
+-rw-rw-r-- 1 root     root      18 Oct 15 03:55 symbolic_mode_file
+[ec2-user@ip-10-0-10-33 companyA]$ pwd
+/home/ec2-user/companyA
+[ec2-user@ip-10-0-10-33 companyA]$ sudo chown -R eowusu:Shipping Shipping
+[ec2-user@ip-10-0-10-33 companyA]$ sudo chown -R nwolf:Sales Sales
+[ec2-user@ip-10-0-10-33 companyA]$ ls
+CEO        HR          Sales          absolute_mode_file
+Documents  Management  SharedFolders  symbolic_mode_file
+Employees  Roster.csv  Shipping
+[ec2-user@ip-10-0-10-33 companyA]$ ls -laR Shipping
+Shipping:
+total 0
+drwxr-xr-x  2 eowusu   Shipping    6 Oct 15 03:49 .
+drwxr-xr-x 10 mjackson Personnel 199 Oct 15 03:56 ..
+[ec2-user@ip-10-0-10-33 companyA]$ ls -laR Sales
+Sales:
+total 0
+drwxr-xr-x  2 nwolf    Sales       6 Oct 15 03:49 .
+drwxr-xr-x 10 mjackson Personnel 199 Oct 15 03:56 ..
+[ec2-user@ip-10-0-10-33 companyA]$ pwd
+/home/ec2-user/companyA
+[ec2-user@ip-10-0-10-33 companyA]$ Connection to 52.13.53.154 closed by remote host.
+Connection to 52.13.53.154 closed.
