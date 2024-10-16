@@ -1,0 +1,187 @@
+madsheptian@DESKTOP-5G3MJ3B:~$ nano labsuser.pem
+madsheptian@DESKTOP-5G3MJ3B:~$ nano labsuser6.pem
+madsheptian@DESKTOP-5G3MJ3B:~$ chmod 400 labsuser6.pem
+madsheptian@DESKTOP-5G3MJ3B:~$ ssh -i labsuser6.pem ec2-user@34.213.71.23
+The authenticity of host '34.213.71.23 (34.213.71.23)' can't be established.
+ED25519 key fingerprint is SHA256:ceREr1dAF6l0uJk9l6O9uOKbY2wAsNVLdpA9U6StrFY.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '34.213.71.23' (ED25519) to the list of known hosts.
+   ,     #_
+   ~\_  ####_        Amazon Linux 2
+  ~~  \_#####\
+  ~~     \###|       AL2 End of Life is 2025-06-30.
+  ~~       \#/ ___
+   ~~       V~' '->
+    ~~~         /    A newer version of Amazon Linux is available!
+      ~~._.   _/
+         _/ _/       Amazon Linux 2023, GA and supported until 2028-03-15.
+       _/m/'           https://aws.amazon.com/linux/amazon-linux-2023/
+
+[ec2-user@ip-10-0-10-15 ~]$ pwd
+/home/ec2-user
+[ec2-user@ip-10-0-10-15 ~]$ cd companyA
+[ec2-user@ip-10-0-10-15 companyA]$ sudo ps -aux
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  0.7  0.5 123512  5456 ?        Ss   03:48   0:01 /usr/lib/s
+root         2  0.0  0.0      0     0 ?        S    03:48   0:00 [kthreadd]
+root         3  0.0  0.0      0     0 ?        I    03:48   0:00 [kworker/0
+root         4  0.0  0.0      0     0 ?        I<   03:48   0:00 [kworker/0
+root         5  0.0  0.0      0     0 ?        I    03:48   0:00 [kworker/u
+root         6  0.0  0.0      0     0 ?        I<   03:48   0:00 [mm_percpu
+root         7  0.0  0.0      0     0 ?        S    03:48   0:00 [ksoftirqd
+root         8  0.0  0.0      0     0 ?        I    03:48   0:00 [rcu_sched
+root         9  0.0  0.0      0     0 ?        I    03:48   0:00 [rcu_bh]
+root        10  0.0  0.0      0     0 ?        S    03:48   0:00 [migration
+root        11  0.0  0.0      0     0 ?        S    03:48   0:00 [watchdog/
+root        12  0.0  0.0      0     0 ?        S    03:48   0:00 [cpuhp/0]
+root        13  0.0  0.0      0     0 ?        S    03:48   0:00 [cpuhp/1]
+root        14  0.0  0.0      0     0 ?        S    03:48   0:00 [watchdog/
+root        15  0.0  0.0      0     0 ?        S    03:48   0:00 [migration
+root        16  0.0  0.0      0     0 ?        S    03:48   0:00 [ksoftirqd
+root        17  0.0  0.0      0     0 ?        I    03:48   0:00 [kworker/1
+root        18  0.0  0.0      0     0 ?        I<   03:48   0:00 [kworker/1
+root        20  0.0  0.0      0     0 ?        S    03:48   0:00 [kdevtmpfs
+root        21  0.0  0.0      0     0 ?        I<   03:48   0:00 [netns]
+root        22  0.0  0.0      0     0 ?        I    03:48   0:00 [kworker/u
+root        25  0.0  0.0      0     0 ?        I    03:48   0:00 [kworker/u
+root        29  0.0  0.0      0     0 ?        I    03:48   0:00 [kworker/1
+root        35  0.0  0.0      0     0 ?        I    03:48   0:00 [kworker/0
+root       117  0.0  0.0      0     0 ?        S    03:48   0:00 [khungtask
+root       154  0.0  0.0      0     0 ?        S    03:48   0:00 [oom_reape
+root       184  0.0  0.0      0     0 ?        I<   03:48   0:00 [writeback
+root       205  0.0  0.0      0     0 ?        S    03:48   0:00 [kcompactd
+root       206  0.0  0.0      0     0 ?        SN   03:48   0:00 [ksmd]
+root       207  0.0  0.0      0     0 ?        SN   03:48   0:00 [khugepage
+root       208  0.0  0.0      0     0 ?        I<   03:48   0:00 [crypto]
+root       209  0.0  0.0      0     0 ?        I<   03:48   0:00 [kintegrit
+root       210  0.0  0.0      0     0 ?        I<   03:48   0:00 [kblockd]
+root       316  0.0  0.0      0     0 ?        I<   03:48   0:00 [md]
+root       321  0.0  0.0      0     0 ?        I<   03:48   0:00 [edac-poll
+root       327  0.0  0.0      0     0 ?        I<   03:48   0:00 [watchdogd
+root       451  0.0  0.0      0     0 ?        S    03:48   0:00 [kauditd]
+root       457  0.0  0.0      0     0 ?        S    03:48   0:00 [kswapd0]
+root       547  0.0  0.0      0     0 ?        I<   03:48   0:00 [xfsalloc]
+root       548  0.0  0.0      0     0 ?        I<   03:48   0:00 [xfs_mru_c
+root       603  0.0  0.0      0     0 ?        I<   03:48   0:00 [kthrotld]
+root       633  0.0  0.0      0     0 ?        I<   03:48   0:00 [nvme-wq]
+root       653  0.0  0.0      0     0 ?        I    03:48   0:00 [kworker/1
+root       659  0.0  0.0      0     0 ?        I<   03:48   0:00 [ipv6_addr
+root       664  0.0  0.0      0     0 ?        I<   03:48   0:00 [kstrp]
+root       715  0.0  0.0      0     0 ?        I    03:48   0:00 [kworker/0
+root       724  0.0  0.0      0     0 ?        I    03:48   0:00 [kworker/1
+root      1073  0.0  0.0      0     0 ?        I<   03:48   0:00 [xfs-buf/n
+root      1074  0.0  0.0      0     0 ?        I<   03:48   0:00 [xfs-data/
+root      1075  0.0  0.0      0     0 ?        I<   03:48   0:00 [xfs-conv/
+root      1076  0.0  0.0      0     0 ?        I<   03:48   0:00 [xfs-cil/n
+root      1077  0.0  0.0      0     0 ?        I<   03:48   0:00 [xfs-recla
+root      1078  0.0  0.0      0     0 ?        I<   03:48   0:00 [xfs-log/n
+root      1079  0.0  0.0      0     0 ?        I<   03:48   0:00 [xfs-eofbl
+root      1080  0.0  0.0      0     0 ?        S    03:48   0:00 [xfsaild/n
+root      1082  0.0  0.0      0     0 ?        I<   03:48   0:00 [kworker/0
+root      1141  0.1  0.6  39068  6680 ?        Ss   03:48   0:00 /usr/lib/s
+root      1166  0.0  0.2 116708  2164 ?        Ss   03:48   0:00 /usr/sbin/
+root      1167  0.0  0.3  37236  3348 ?        Ss   03:48   0:00 /usr/lib/s
+root      1178  0.0  0.0      0     0 ?        I<   03:48   0:00 [ena]
+root      1179  0.0  0.0      0     0 ?        I<   03:48   0:00 [kworker/1
+root      1662  0.0  0.0      0     0 ?        I    03:48   0:00 [kworker/0
+root      1671  0.0  0.0      0     0 ?        I<   03:48   0:00 [rpciod]
+root      1672  0.0  0.0      0     0 ?        I<   03:48   0:00 [xprtiod]
+root      1674  0.0  0.2  59736  1996 ?        S<sl 03:48   0:00 /sbin/audi
+root      1686  0.0  0.0      0     0 ?        I    03:48   0:00 [kworker/u
+root      1709  0.0  0.3  28472  2928 ?        Ss   03:48   0:00 /usr/lib/s
+rpc       1712  0.0  0.3  67256  3288 ?        Ss   03:48   0:00 /sbin/rpcb
+root      1713  0.0  0.1 101848  1564 ?        Ssl  03:48   0:00 /usr/sbin/
+dbus      1714  0.1  0.4  58248  4156 ?        Ss   03:48   0:00 /usr/bin/d
+root      1718  0.0  0.2 101592  2820 ?        Ssl  03:48   0:00 /usr/sbin/
+libstor+  1719  0.0  0.1  12628  1856 ?        Ss   03:48   0:00 /usr/bin/l
+rngd      1731  0.0  0.4  96344  4772 ?        Ss   03:48   0:00 /sbin/rngd
+root      1744  0.0  0.0   4268   108 ?        Ss   03:48   0:00 /usr/sbin/
+chrony    1745  0.0  0.3 120184  3132 ?        S    03:48   0:00 /usr/sbin/
+root      1963  0.0  0.3  98684  3760 ?        Ss   03:48   0:00 /sbin/dhcl
+root      2003  0.0  0.4  98684  4132 ?        Ss   03:48   0:00 /sbin/dhcl
+root      2158  0.0  0.4  90308  4784 ?        Ss   03:48   0:00 /usr/libex
+postfix   2159  0.0  0.6  90396  6556 ?        S    03:48   0:00 pickup -l
+postfix   2160  0.0  0.7  90468  6796 ?        S    03:48   0:00 qmgr -l -t
+root      2220  0.0  0.5 282048  4928 ?        Ssl  03:48   0:00 /usr/sbin/
+root      2241  0.3  2.0 1242036 19852 ?       Ssl  03:48   0:00 /usr/bin/a
+root      2247  0.0  0.2  24684  2696 ?        Ss   03:48   0:00 /usr/sbin/
+root      2248  0.0  0.2  27884  2120 ?        Ss   03:48   0:00 /usr/sbin/
+root      2260  0.0  0.1 121308  1832 tty1     Ss+  03:48   0:00 /sbin/aget
+root      2261  0.0  0.1  10556  1800 ttyS0    Ss+  03:48   0:00 /sbin/aget
+root      2304  0.0  0.7 110848  7220 ?        Ss   03:48   0:00 /usr/sbin/
+root      2661  0.0  0.0      0     0 ?        I    03:48   0:00 [kworker/0
+root      2874  0.0  0.9 150648  8840 ?        Ss   03:50   0:00 sshd: ec2-
+ec2-user  2891  0.0  0.4 150648  4316 ?        S    03:50   0:00 sshd: ec2-
+ec2-user  2892  0.0  0.4 126716  3876 pts/0    Ss   03:50   0:00 -bash
+root      2913  0.0  0.7 241660  7216 pts/0    S+   03:51   0:00 sudo ps -a
+root      2914  0.0  0.4 164144  3972 pts/0    R+   03:51   0:00 ps -aux
+[ec2-user@ip-10-0-10-15 companyA]$
+[ec2-user@ip-10-0-10-15 companyA]$ sudo ps -aux | grep -v root | sudo tee SharedFolders/processes.csv
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+rpc       1712  0.0  0.3  67256  3288 ?        Ss   03:48   0:00 /sbin/rpcbind -w
+dbus      1714  0.1  0.4  58248  4156 ?        Ss   03:48   0:00 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation
+libstor+  1719  0.0  0.1  12628  1856 ?        Ss   03:48   0:00 /usr/bin/lsmd -d
+rngd      1731  0.0  0.4  96344  4772 ?        Ss   03:48   0:00 /sbin/rngd -f --fill-watermark=0 --exclude=jitter
+chrony    1745  0.0  0.3 120184  3132 ?        S    03:48   0:00 /usr/sbin/chronyd -F 2
+postfix   2159  0.0  0.6  90396  6556 ?        S    03:48   0:00 pickup -l -t unix -u
+postfix   2160  0.0  0.7  90468  6796 ?        S    03:48   0:00 qmgr -l -t unix -u
+ec2-user  2891  0.0  0.4 150648  4316 ?        S    03:50   0:00 sshd: ec2-user@pts/0
+ec2-user  2892  0.0  0.4 126716  3912 pts/0    Ss   03:50   0:00 -bash
+[ec2-user@ip-10-0-10-15 companyA]$ cat SharedFolders/processes.csv
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+rpc       1712  0.0  0.3  67256  3288 ?        Ss   03:48   0:00 /sbin/rpcbind -w
+dbus      1714  0.1  0.4  58248  4156 ?        Ss   03:48   0:00 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation
+libstor+  1719  0.0  0.1  12628  1856 ?        Ss   03:48   0:00 /usr/bin/lsmd -d
+rngd      1731  0.0  0.4  96344  4772 ?        Ss   03:48   0:00 /sbin/rngd -f --fill-watermark=0 --exclude=jitter
+chrony    1745  0.0  0.3 120184  3132 ?        S    03:48   0:00 /usr/sbin/chronyd -F 2
+postfix   2159  0.0  0.6  90396  6556 ?        S    03:48   0:00 pickup -l -t unix -u
+postfix   2160  0.0  0.7  90468  6796 ?        S    03:48   0:00 qmgr -l -t unix -u
+ec2-user  2891  0.0  0.4 150648  4316 ?        S    03:50   0:00 sshd: ec2-user@pts/0
+ec2-user  2892  0.0  0.4 126716  3912 pts/0    Ss   03:50   0:00 -bash
+[ec2-user@ip-10-0-10-15 companyA]$ top
+top - 03:53:11 up 4 min,  1 user,  load average: 0.00, 0.04, 0.01
+Tasks:  92 total,   1 running,  47 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  0.2 sy,  0.0 ni, 99.8 id,  0.0 wa,  0.0 hi,  0.0 si,  0 KiB Mem :   966808 total,   349320 free,    74952 used,   542536 buff/cach
+KiB Swap:        0 total,        0 free,        0 used.   749416 avail Mem
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+
+    1 root      20   0  123512   5456   3996 S   0.0  0.6   0:01.47
+    2 root      20   0       0      0      0 S   0.0  0.0   0:00.00
+    3 root      20   0       0      0      0 I   0.0  0.0   0:00.00
+    4 root       0 -20       0      0      0 I   0.0  0.0   0:00.00
+    5 root      20   0       0      0      0 I   0.0  0.0   0:00.02
+    6 root       0 -20       0      0      0 I   0.0  0.0   0:00.00
+    7 root      20   0       0      0      0 S   0.0  0.0   0:00.02
+    8 root      20   0       0      0      0 I   0.0  0.0   0:00.03
+    9 root      20   0       0      0      0 I   0.0  0.0   0:00.00
+   10 root      rt   0       0      0      0 S   0.0  0.0   0:00.00
+   11 root      rt   0       0      0      0 S   0.0  0.0   0:00.00
+   12 root      20   0       0      0      0 S   0.0  0.0   0:00.00
+   13 root      20   0       0      0      0 S   0.0  0.0   0:00.00
+   14 root      rt   0       0      0      0 S   0.0  0.0   0:00.00
+   15 root      rt   0       0      0      0 S   0.0  0.0   0:00.18
+   16 root      20   0       0      0      0 S   0.0  0.0   0:00.02
+   17 root      20   0       0      0      0 I   0.0  0.0   0:00.00
+   18 root       0 -20       0      0      0 I   0.0  0.0   0:00.00
+   20 root      20   0       0      0      0 S   0.0  0.0   0:00.00
+   21 root       0 -20       0      0      0 I   0.0  0.0   0:00.00
+   22 root      20   0       0      0      0 I   0.0  0.0   0:00.08
+   25 root      20   0       0      0      0 I   0.0  0.0   0:00.10
+   29 root      20   0       0      0      0 I   0.0  0.0   0:00.04
+   35 root      20   0       0      0      0 I   0.0  0.0   0:00.00
+  117 root      20   0       0      0      0 S   0.0  0.0   0:00.00
+[ec2-user@ip-10-0-10-15 companyA]$ top -hv
+  procps-ng version 3.3.10
+Usage:
+  top -hv | -bcHiOSs -d secs -n max -u|U user -p pid(s) -o field -w [cols]
+[ec2-user@ip-10-0-10-15 companyA]$ pwd
+/home/ec2-user/companyA
+[ec2-user@ip-10-0-10-15 companyA]$ sudo crontab -e
+no crontab for root - using an empty one
+crontab: installing new crontab
+[ec2-user@ip-10-0-10-15 companyA]$ sudo crontab -l
+SHELL=/bin/bash
+PATH=/usr/bin:/bin:/usr/local/bin
+MAILTO=root
+0 * * * * ls -la $(find .) | sed -e 's/..csv/#####.csv/g' > /home/ec2-user/companyA/SharedFolders/filteredAudit.csv
