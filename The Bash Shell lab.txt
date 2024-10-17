@@ -1,0 +1,61 @@
+madsheptian@DESKTOP-5G3MJ3B:~$ nano labsuser.pem
+madsheptian@DESKTOP-5G3MJ3B:~$ chmod 400 labsuser.pem
+madsheptian@DESKTOP-5G3MJ3B:~$ ssh -i labsuser.pem ec2-user@35.90.251.132
+The authenticity of host '35.90.251.132 (35.90.251.132)' can't be established.
+ED25519 key fingerprint is SHA256:xZaH7zFSuwF0l4g9TPHrLcNNr4ZtsTKUdo/fqKH1xXE.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '35.90.251.132' (ED25519) to the list of known hosts.
+   ,     #_
+   ~\_  ####_        Amazon Linux 2
+  ~~  \_#####\
+  ~~     \###|       AL2 End of Life is 2025-06-30.
+  ~~       \#/ ___
+   ~~       V~' '->
+    ~~~         /    A newer version of Amazon Linux is available!
+      ~~._.   _/
+         _/ _/       Amazon Linux 2023, GA and supported until 2028-03-15.
+       _/m/'           https://aws.amazon.com/linux/amazon-linux-2023/
+
+[ec2-user@ip-10-0-10-161 ~]$ pwd
+/home/ec2-user
+[ec2-user@ip-10-0-10-161 ~]$ alias backup='tar -cvzf '
+[ec2-user@ip-10-0-10-161 ~]$ backup
+tar: option requires an argument -- 'f'
+Try `tar --help' or `tar --usage' for more information.
+[ec2-user@ip-10-0-10-161 ~]$ backup backup_companyA.tar.gz CompanyA
+CompanyA/
+CompanyA/Management/
+CompanyA/Management/Sections.csv
+CompanyA/Management/Promotions.csv
+CompanyA/Employees/
+CompanyA/Employees/Schedules.csv
+CompanyA/Finance/
+CompanyA/Finance/Salary.csv
+CompanyA/HR/
+CompanyA/HR/Managers.csv
+CompanyA/HR/Assessments.csv
+CompanyA/IA/
+CompanyA/SharedFolders/
+CompanyA/bin/
+CompanyA/bin/hello.sh
+[ec2-user@ip-10-0-10-161 ~]$ ls
+CompanyA  backup_companyA.tar.gz
+[ec2-user@ip-10-0-10-161 ~]$ cd /home/ec2-user/CompanyA/bin
+[ec2-user@ip-10-0-10-161 bin]$ ./hello.sh
+Hello ec2-user
+[ec2-user@ip-10-0-10-161 bin]$ hello.sh
+-bash: hello.sh: command not found
+[ec2-user@ip-10-0-10-161 bin]$ cd ..
+[ec2-user@ip-10-0-10-161 CompanyA]$ ./bin/hello.sh
+Hello ec2-user
+[ec2-user@ip-10-0-10-161 CompanyA]$ hello.sh
+-bash: hello.sh: command not found
+[ec2-user@ip-10-0-10-161 CompanyA]$ echo $PATH
+/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/ec2-user/.local/bin:/home/ec2-user/bin
+[ec2-user@ip-10-0-10-161 CompanyA]$ PATH-$PATH:/home/ec2-user/CompanyA/bin
+-bash: PATH-/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/ec2-user/.local/bin:/home/ec2-user/bin:/home/ec2-user/CompanyA/bin: No such file or directory
+[ec2-user@ip-10-0-10-161 CompanyA]$ PATH=$PATH:/home/ec2-user/CompanyA/bin
+[ec2-user@ip-10-0-10-161 CompanyA]$ hello.sh
+Hello ec2-user
+[ec2-user@ip-10-0-10-161 CompanyA]$
