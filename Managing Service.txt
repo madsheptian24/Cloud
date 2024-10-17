@@ -1,0 +1,174 @@
+madsheptian@DESKTOP-5G3MJ3B:~/Pelathian-Cloud$ nano labsuser.pem
+madsheptian@DESKTOP-5G3MJ3B:~/Pelathian-Cloud$ chmod 400 labsuser.pem
+madsheptian@DESKTOP-5G3MJ3B:~/Pelathian-Cloud$ ssh -i labsuser.pem ec2-user@54.200.139.245
+The authenticity of host '54.200.139.245 (54.200.139.245)' can't be established.
+ED25519 key fingerprint is SHA256:/GTRa69L/FiLpRKNOgLXBXLok5ZqyGPdoL+NBVjfOiU.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '54.200.139.245' (ED25519) to the list of known hosts.
+   ,     #_
+   ~\_  ####_        Amazon Linux 2
+  ~~  \_#####\
+  ~~     \###|       AL2 End of Life is 2025-06-30.
+  ~~       \#/ ___
+   ~~       V~' '->
+    ~~~         /    A newer version of Amazon Linux is available!
+      ~~._.   _/
+         _/ _/       Amazon Linux 2023, GA and supported until 2028-03-15.
+       _/m/'           https://aws.amazon.com/linux/amazon-linux-2023/
+
+No packages needed for security; 2 packages available
+Run "sudo yum update" to apply all updates.
+[ec2-user@ip-10-0-10-187 ~]$ ls
+CompanyA  stress.sh
+[ec2-user@ip-10-0-10-187 ~]$ sudo systemctl status httpd.service
+● httpd.service - The Apache HTTP Server
+   Loaded: loaded (/usr/lib/systemd/system/httpd.service; disabled; vendor preset: disabled)
+   Active: inactive (dead)
+     Docs: man:httpd.service(8)
+[ec2-user@ip-10-0-10-187 ~]$ sudo systemctl anable httpd.service
+Unknown operation 'anable'.
+[ec2-user@ip-10-0-10-187 ~]$ sudo systemctl enable httpd.service
+Created symlink from /etc/systemd/system/multi-user.target.wants/httpd.service to /usr/lib/systemd/system/httpd.service.
+[ec2-user@ip-10-0-10-187 ~]$ sudo systemctl start httpd.service
+[ec2-user@ip-10-0-10-187 ~]$ sudo systemctl status
+● ip-10-0-10-187.us-west-2.compute.internal
+    State: running
+     Jobs: 0 queued
+   Failed: 0 units
+    Since: Thu 2024-10-17 02:21:29 UTC; 10min ago
+   CGroup: /
+           ├─1 /usr/lib/systemd/systemd --switched-root --system --deserialize 21
+           ├─user.slice
+           │ └─user-1000.slice
+           │   └─session-1.scope
+           │     ├─2524 sshd: ec2-user [priv]
+           │     ├─2541 sshd: ec2-user@pts/0
+           │     ├─2542 -bash
+           │     ├─2667 sudo systemctl status
+           │     ├─2668 systemctl status
+           │     └─2669 less
+           └─system.slice
+             ├─rngd.service
+             │ └─1726 /sbin/rngd -f --fill-watermark=0 --exclude=jitter
+             ├─irqbalance.service
+[ec2-user@ip-10-0-10-187 ~]$  sudo systemctl status httpd.service
+● httpd.service - The Apache HTTP Server
+   Loaded: loaded (/usr/lib/systemd/system/httpd.service; enabled; vendor preset: disabled)
+   Active: active (running) since Thu 2024-10-17 02:30:52 UTC; 1min 34s ago
+     Docs: man:httpd.service(8)
+ Main PID: 2602 (httpd)
+   Status: "Total requests: 0; Idle/Busy workers 75/25;Requests/sec: 0; Bytes served/sec:   0 B/sec"
+   CGroup: /system.slice/httpd.service
+           ├─2602 /usr/sbin/httpd -DFOREGROUND
+           ├─2603 /usr/sbin/httpd -DFOREGROUND
+           ├─2605 /usr/sbin/httpd -DFOREGROUND
+           ├─2610 /usr/sbin/httpd -DFOREGROUND
+           ├─2612 /usr/sbin/httpd -DFOREGROUND
+           ├─2617 /usr/sbin/httpd -DFOREGROUND
+           ├─2649 /usr/sbin/httpd -DFOREGROUND
+           ├─2655 /usr/sbin/httpd -DFOREGROUND
+           └─2657 /usr/sbin/httpd -DFOREGROUND
+
+Oct 17 02:30:52 ip-10-0-10-187.us-west-2.compute.internal systemd[1]: Starting The Apache HTT...
+Oct 17 02:30:52 ip-10-0-10-187.us-west-2.compute.internal systemd[1]: Started The Apache HTTP...
+Hint: Some lines were ellipsized, use -l to show in full.
+[ec2-user@ip-10-0-10-187 ~]$ sudo systemctl stop httpd.service
+[ec2-user@ip-10-0-10-187 ~]$ sudo systemctl start httpd.service
+[ec2-user@ip-10-0-10-187 ~]$ sudo systemctl status httpd.service
+● httpd.service - The Apache HTTP Server
+   Loaded: loaded (/usr/lib/systemd/system/httpd.service; enabled; vendor preset: disabled)
+   Active: active (running) since Thu 2024-10-17 02:34:00 UTC; 1min 55s ago
+     Docs: man:httpd.service(8)
+ Main PID: 2684 (httpd)
+   Status: "Total requests: 1; Idle/Busy workers 100/0;Requests/sec: 0.00917; Bytes served/sec:  40 B/sec"
+   CGroup: /system.slice/httpd.service
+           ├─2684 /usr/sbin/httpd -DFOREGROUND
+           ├─2685 /usr/sbin/httpd -DFOREGROUND
+           ├─2687 /usr/sbin/httpd -DFOREGROUND
+           ├─2692 /usr/sbin/httpd -DFOREGROUND
+           ├─2694 /usr/sbin/httpd -DFOREGROUND
+           ├─2699 /usr/sbin/httpd -DFOREGROUND
+           └─2731 /usr/sbin/httpd -DFOREGROUND
+
+Oct 17 02:34:00 ip-10-0-10-187.us-west-2.compute.internal systemd[1]: Starting The Apache HTT...
+Oct 17 02:34:00 ip-10-0-10-187.us-west-2.compute.internal systemd[1]: Started The Apache HTTP...
+Hint: Some lines were ellipsized, use -l to show in full.
+[ec2-user@ip-10-0-10-187 ~]$ sudo systemctl stop httpd.service
+[ec2-user@ip-10-0-10-187 ~]$ sudo yum isntall htop
+Loaded plugins: extras_suggestions, langpacks, priorities, update-motd
+No such command: isntall. Please use /bin/yum --help
+[ec2-user@ip-10-0-10-187 ~]$ htop
+-bash: htop: command not found
+[ec2-user@ip-10-0-10-187 ~]$ htop
+-bash: htop: command not found
+[ec2-user@ip-10-0-10-187 ~]$ sudo yum install htop
+Loaded plugins: extras_suggestions, langpacks, priorities, update-motd
+amzn2-core                                                               | 3.6 kB  00:00:00
+230 packages excluded due to repository priority protections
+Resolving Dependencies
+--> Running transaction check
+---> Package htop.x86_64 0:2.0.2-1.amzn2.0.2 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+================================================================================================
+ Package          Arch               Version                       Repository              Size
+================================================================================================
+Installing:
+ htop             x86_64             2.0.2-1.amzn2.0.2             amzn2-core              98 k
+
+Transaction Summary
+================================================================================================
+Install  1 Package
+
+Total download size: 98 k
+Installed size: 207 k
+Is this ok [y/d/N]: htop
+Is this ok [y/d/N]: y
+Downloading packages:
+htop-2.0.2-1.amzn2.0.2.x86_64.rpm                                        |  98 kB  00:00:00
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Installing : htop-2.0.2-1.amzn2.0.2.x86_64                                                1/1
+  Verifying  : htop-2.0.2-1.amzn2.0.2.x86_64                                                1/1
+
+Installed:
+  htop.x86_64 0:2.0.2-1.amzn2.0.2
+
+Complete!
+[ec2-user@ip-10-0-10-187 ~]$ htop
+[ec2-user@ip-10-0-10-187 ~]$ ./stress.sh & top
+[1] 2807
+stress: info: [2809] dispatching hogs: 8 cpu, 4 io, 2 vm, 0 hdd
+top - 02:43:23 up 21 min,  1 user,  load average: 3.14, 0.71, 0.23
+Tasks: 104 total,  15 running,  49 sleeping,   0 stopped,   0 zombie
+%Cpu(s): 57.1 us, 35.8 sy,  0.0 ni,  0.0 id,  0.0 wa,  0.0 hi,  0.0 si,  7.2 st
+KiB Mem :   966808 total,   296796 free,   232020 used,   437992 buff/cache
+KiB Swap:        0 total,        0 free,        0 used.   592524 avail Mem
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+ 2812 ec2-user  20   0  138656  90860    212 R  13.3  9.4   0:01.59 stress
+ 2813 ec2-user  20   0    7580    100      0 R  13.3  0.0   0:01.59 stress
+ 2814 ec2-user  20   0    7580    100      0 R  13.3  0.0   0:01.59 stress
+ 2815 ec2-user  20   0  138656  62876    212 R  13.3  6.5   0:01.59 stress
+ 2816 ec2-user  20   0    7580    100      0 R  13.3  0.0   0:01.59 stress
+ 2817 ec2-user  20   0    7580    100      0 R  13.3  0.0   0:01.59 stress
+ 2818 ec2-user  20   0    7580    100      0 R  13.3  0.0   0:01.59 stress
+ 2819 ec2-user  20   0    7580    100      0 R  13.3  0.0   0:01.58 stress
+ 2821 ec2-user  20   0    7580    100      0 R  13.3  0.0   0:01.59 stress
+ 2822 ec2-user  20   0    7580    100      0 R  13.3  0.0   0:01.65 stress
+ 2823 ec2-user  20   0    7580    100      0 R  13.3  0.0   0:01.64 stress
+ 2810 ec2-user  20   0    7580    100      0 R  13.0  0.0   0:01.59 stress
+ 2811 ec2-user  20   0    7580    100      0 R  13.0  0.0   0:01.58 stress
+ 2820 ec2-user  20   0    7580    100      0 R  13.0  0.0   0:01.58 stress
+[ec2-user@ip-10-0-10-187 ~]$ ./stress.sh & htop
+[2] 2875
+[1]-  Done                    ./stress.sh
+[ec2-user@ip-10-0-10-187 ~]$ stress: info: [2877] successful run completed in 360s
+
+[2]+  Done                    ./stress.sh
+[ec2-user@ip-10-0-10-187 ~]$
