@@ -1,0 +1,43 @@
+madsheptian@DESKTOP-5G3MJ3B:~/Pelathian-Cloud$ nano labsuser.pem
+madsheptian@DESKTOP-5G3MJ3B:~/Pelathian-Cloud$ chmod 400 labsuser.pem
+madsheptian@DESKTOP-5G3MJ3B:~/Pelathian-Cloud$ ssh -i labsuser.pem ec2-user@54.202.176.21
+The authenticity of host '54.202.176.21 (54.202.176.21)' can't be established.
+ED25519 key fingerprint is SHA256:W1u4qGwQNQrqg6mGfL2uvzJT+39DTdIdM22z2pmfbOM.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '54.202.176.21' (ED25519) to the list of known hosts.
+   ,     #_
+   ~\_  ####_        Amazon Linux 2
+  ~~  \_#####\
+  ~~     \###|       AL2 End of Life is 2025-06-30.
+  ~~       \#/ ___
+   ~~       V~' '->
+    ~~~         /    A newer version of Amazon Linux is available!
+      ~~._.   _/
+         _/ _/       Amazon Linux 2023, GA and supported until 2028-03-15.
+       _/m/'           https://aws.amazon.com/linux/amazon-linux-2023/
+
+[ec2-user@ip-10-0-10-46 ~]$ pwd
+/home/ec2-user
+[ec2-user@ip-10-0-10-46 ~]$ touch backup.sh
+[ec2-user@ip-10-0-10-46 ~]$ sudo chmod 755 backup.sh
+[ec2-user@ip-10-0-10-46 ~]$ vi backup.sh
+[ec2-user@ip-10-0-10-46 ~]$ ./backup.sh
+tar: Removing leading `/' from member names
+/home/ec2-user/CompanyA/
+/home/ec2-user/CompanyA/Management/
+/home/ec2-user/CompanyA/Management/Sections.csv
+/home/ec2-user/CompanyA/Management/Promotions.csv
+/home/ec2-user/CompanyA/Employees/
+/home/ec2-user/CompanyA/Employees/Schedules.csv
+/home/ec2-user/CompanyA/Finance/
+/home/ec2-user/CompanyA/Finance/Salary.csv
+/home/ec2-user/CompanyA/Finance/Hourly.csv
+/home/ec2-user/CompanyA/HR/
+/home/ec2-user/CompanyA/HR/Managers.csv
+/home/ec2-user/CompanyA/HR/Assessments.csv
+/home/ec2-user/CompanyA/IA/
+/home/ec2-user/CompanyA/SharedFolders/
+[ec2-user@ip-10-0-10-46 ~]$ ls backups/
+2024_10_17_04:36:53_04_36-backup-CompanyA.tar.gz
+[ec2-user@ip-10-0-10-46 ~]$
