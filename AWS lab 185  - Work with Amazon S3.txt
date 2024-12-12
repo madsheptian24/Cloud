@@ -1,0 +1,74 @@
+madsheptian@DESKTOP-5G3MJ3B:~$ nano lab185.pem
+madsheptian@DESKTOP-5G3MJ3B:~$ chmod 400 lab
+chmod: cannot access 'lab': No such file or directory
+madsheptian@DESKTOP-5G3MJ3B:~$ chmod 400 lab185.pem
+madsheptian@DESKTOP-5G3MJ3B:~$ ssh -i lab185.pem ec2-user@35.88.81.88
+The authenticity of host '35.88.81.88 (35.88.81.88)' can't be established.
+ED25519 key fingerprint is SHA256:Bally9aynn3qAXN26vut++RXZONrSK3sTx0RXq/CjMY.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '35.88.81.88' (ED25519) to the list of known hosts.
+   ,     #_
+   ~\_  ####_        Amazon Linux 2
+  ~~  \_#####\
+  ~~     \###|       AL2 End of Life is 2025-06-30.
+  ~~       \#/ ___
+   ~~       V~' '->
+    ~~~         /    A newer version of Amazon Linux is available!
+      ~~._.   _/
+         _/ _/       Amazon Linux 2023, GA and supported until 2028-03-15.
+       _/m/'           https://aws.amazon.com/linux/amazon-linux-2023/
+
+[ec2-user@ip-10-200-0-69 ~]$ aws configure
+AWS Access Key ID [None]: AKIARXOIG6EMFJHLXB5S
+AWS Secret Access Key [None]: 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
+Default region name [None]: us-west-2
+Default output format [None]: json
+[ec2-user@ip-10-200-0-69 ~]$ aws s3 mb s3://<cafe-xxxnnn> --region 'us-west-2'
+-bash: cafe-xxxnnn: No such file or directory
+[ec2-user@ip-10-200-0-69 ~]$ aws s3 mb s3://cafe-tyn249 --region 'us-west-2'
+make_bucket: cafe-tyn249
+[ec2-user@ip-10-200-0-69 ~]$ aws s3 sync ~/initial-images/ s3://cafe-tyn249/images
+upload: initial-images/Strawberry-Tarts.jpg to s3://cafe-tyn249/images/Strawberry-Tarts.jpg
+upload: initial-images/Cup-of-Hot-Chocolate.jpg to s3://cafe-tyn249/images/Cup-of-Hot-Chocolate.jpg
+upload: initial-images/Donuts.jpg to s3://cafe-tyn249/images/Donuts.jpg
+[ec2-user@ip-10-200-0-69 ~]$ aws s3 ls s3://cafe-tyn249/images/ --human-readable --s
+ummarize
+2024-12-12 01:29:45  308.7 KiB Cup-of-Hot-Chocolate.jpg
+2024-12-12 01:29:46  371.8 KiB Donuts.jpg
+2024-12-12 01:29:46  468.0 KiB Strawberry-Tarts.jpg
+
+Total Objects: 3
+   Total Size: 1.1 MiB
+[ec2-user@ip-10-200-0-69 ~]$ vi s3EventNotification.json
+[ec2-user@ip-10-200-0-69 ~]$ aws s3api put-bucket-notification-configuration --bucket tyn249 --notification-configuration file://s3EventNotification.json
+
+An error occurred (NoSuchBucket) when calling the PutBucketNotificationConfiguration operation: The specified bucket does not exist
+[ec2-user@ip-10-200-0-69 ~]$ aws s3api put-bucket-notification-configuration --bucket cafe-tyn249 --notification-configuration file://s3EventNotification.json
+[ec2-user@ip-10-200-0-69 ~]$ aws s3api put-bucket-notification-configuration --bucket cafe-tyn249 --notification-configuration file://s3EventNotification.json
+[ec2-user@ip-10-200-0-69 ~]$ aws configure
+AWS Access Key ID [****************XB5S]: AKIARXOIG6EMFJHLXB5S
+AWS Secret Access Key [****************fbn1]: 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
+Default region name [us-west-2]: us-west-2
+Default output format [json]: json
+[ec2-user@ip-10-200-0-69 ~]$ aws s3api put-object --bucket cafe-tyn249 --key images/
+Caramel-Delight.jpg --body ~/new-images/Caramel-Delight.jpg
+{
+    "ETag": "\"31ac30da619244b0ce786f106e4f3df7\"",
+    "ServerSideEncryption": "AES256"
+}
+[ec2-user@ip-10-200-0-69 ~]$ aws s3api get-object --bucket cafe-tyn249 --key images/Donuts.jpg Donuts.jpg
+{
+    "AcceptRanges": "bytes",
+    "ContentType": "image/jpeg",
+    "LastModified": "Thu, 12 Dec 2024 01:29:46 GMT",
+    "ContentLength": 380753,
+    "ETag": "\"405b0bcc53cb5ab713c967dc1422b4f4\"",
+    "ServerSideEncryption": "AES256",
+    "Metadata": {}
+}
+[ec2-user@ip-10-200-0-69 ~]$ aws s3api delete-object --bucket cafe-tyn249 --key images/Strawberry-Tarts.jpg
+[ec2-user@ip-10-200-0-69 ~]$ aws s3api put-object-acl --bucket cafe-tyn249 --key images/Donuts.jpg --acl public-read
+
+An error occurred (AccessDenied) when calling the PutObjectAcl operation: User: arn:aws:iam::119068356888:user/awsstudent is not authorized to perform: s3:PutObjectAcl on resource: "arn:aws:s3:::cafe-tyn249/images/Donuts.jpg" because public access control lists (ACLs) are blocked by the BlockPublicAcls block public access setting.
+[ec2-user@ip-10-200-0-69 ~]$
