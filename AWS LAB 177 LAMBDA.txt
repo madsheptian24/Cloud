@@ -1,0 +1,343 @@
+madsheptian@DESKTOP-5G3MJ3B:~$ aws
+
+usage: aws [options] <command> <subcommand> [<subcommand> ...] [parameters]
+To see help text, you can run:
+
+  aws help
+  aws <command> help
+  aws <command> <subcommand> help
+
+aws: error: the following arguments are required: command
+
+madsheptian@DESKTOP-5G3MJ3B:~$ zip
+Command 'zip' not found, but can be installed with:
+sudo apt install zip
+madsheptian@DESKTOP-5G3MJ3B:~$ sudo apt install zip
+[sudo] password for madsheptian:
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  liburing2 mariadb-common
+Use 'sudo apt autoremove' to remove them.
+The following NEW packages will be installed:
+  zip
+0 upgraded, 1 newly installed, 0 to remove and 37 not upgraded.
+Need to get 176 kB of archives.
+After this operation, 549 kB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 zip amd64 3.0-13ubuntu0.1 [176 kB]
+Fetched 176 kB in 2s (116 kB/s)
+Selecting previously unselected package zip.
+(Reading database ... 53820 files and directories currently installed.)
+Preparing to unpack .../zip_3.0-13ubuntu0.1_amd64.deb ...
+Unpacking zip (3.0-13ubuntu0.1) ...
+Setting up zip (3.0-13ubuntu0.1) ...
+Processing triggers for man-db (2.12.0-4build2) ...
+madsheptian@DESKTOP-5G3MJ3B:~$ unzip
+UnZip 6.00 of 20 April 2009, by Debian. Original by Info-ZIP.
+
+Usage: unzip [-Z] [-opts[modifiers]] file[.zip] [list] [-x xlist] [-d exdir]
+  Default action is to extract files in list, except those in xlist, to exdir;
+  file[.zip] may be a wildcard.  -Z => ZipInfo mode ("unzip -Z" for usage).
+
+  -p  extract files to pipe, no messages     -l  list files (short format)
+  -f  freshen existing files, create none    -t  test compressed archive data
+  -u  update files, create if necessary      -z  display archive comment only
+  -v  list verbosely/show version info       -T  timestamp archive to latest
+  -x  exclude files that follow (in xlist)   -d  extract files into exdir
+modifiers:
+  -n  never overwrite existing files         -q  quiet mode (-qq => quieter)
+  -o  overwrite files WITHOUT prompting      -a  auto-convert any text files
+  -j  junk paths (do not make directories)   -aa treat ALL files as text
+  -U  use escapes for all non-ASCII Unicode  -UU ignore any Unicode fields
+  -C  match filenames case-insensitively     -L  make (some) names lowercase
+  -X  restore UID/GID info                   -V  retain VMS version numbers
+  -K  keep setuid/setgid/tacky permissions   -M  pipe through "more" pager
+  -O CHARSET  specify a character encoding for DOS, Windows and OS/2 archives
+  -I CHARSET  specify a character encoding for UNIX and other archives
+
+See "unzip -hh" or unzip.txt for more help.  Examples:
+  unzip data1 -x joe   => extract all files except joe from zipfile data1.zip
+  unzip -p foo | more  => send contents of foo.zip via pipe into program more
+  unzip -fo foo ReadMe => quietly replace existing ReadMe if archive file newer
+madsheptian@DESKTOP-5G3MJ3B:~$ zip
+Copyright (c) 1990-2008 Info-ZIP - Type 'zip "-L"' for software license.
+Zip 3.0 (July 5th 2008). Usage:
+zip [-options] [-b path] [-t mmddyyyy] [-n suffixes] [zipfile list] [-xi list]
+  The default action is to add or replace zipfile entries from list, which
+  can include the special name - to compress standard input.
+  If zipfile and list are omitted, zip compresses stdin to stdout.
+  -f   freshen: only changed files  -u   update: only changed or new files
+  -d   delete entries in zipfile    -m   move into zipfile (delete OS files)
+  -r   recurse into directories     -j   junk (don't record) directory names
+  -0   store only                   -l   convert LF to CR LF (-ll CR LF to LF)
+  -1   compress faster              -9   compress better
+  -q   quiet operation              -v   verbose operation/print version info
+  -c   add one-line comments        -z   add zipfile comment
+  -@   read names from stdin        -o   make zipfile as old as latest entry
+  -x   exclude the following names  -i   include only the following names
+  -F   fix zipfile (-FF try harder) -D   do not add directory entries
+  -A   adjust self-extracting exe   -J   junk zipfile prefix (unzipsfx)
+  -T   test zipfile integrity       -X   eXclude eXtra file attributes
+  -y   store symbolic links as the link instead of the referenced file
+  -e   encrypt                      -n   don't compress these suffixes
+  -h2  show more help
+
+madsheptian@DESKTOP-5G3MJ3B:~$ sudo
+usage: sudo -h | -K | -k | -V
+usage: sudo -v [-ABkNnS] [-g group] [-h host] [-p prompt] [-u user]
+usage: sudo -l [-ABkNnS] [-g group] [-h host] [-p prompt] [-U user]
+            [-u user] [command [arg ...]]
+usage: sudo [-ABbEHkNnPS] [-r role] [-t type] [-C num] [-D directory]
+            [-g group] [-h host] [-p prompt] [-R directory] [-T timeout]
+            [-u user] [VAR=value] [-i | -s] [command [arg ...]]
+usage: sudo -e [-ABkNnS] [-r role] [-t type] [-C num] [-D directory]
+            [-g group] [-h host] [-p prompt] [-R directory] [-T timeout]
+            [-u user] file ...
+madsheptian@DESKTOP-5G3MJ3B:~$ pwd
+/home/madsheptian
+madsheptian@DESKTOP-5G3MJ3B:~$ ls
+Pelatihan  Pelatoihan  aws  awscliv2.zip  keypair.pem  lab182.pem  labsuser.pem  pelatihan-cloud
+madsheptian@DESKTOP-5G3MJ3B:~$ cat
+
+
+^C
+madsheptian@DESKTOP-5G3MJ3B:~$ cat awscli.zip
+cat: awscli.zip: No such file or directory
+madsheptian@DESKTOP-5G3MJ3B:~$ ls
+Pelatihan  Pelatoihan  aws  awscliv2.zip  keypair.pem  lab182.pem  labsuser.pem  pelatihan-cloud
+madsheptian@DESKTOP-5G3MJ3B:~$ cd Pelatihan
+madsheptian@DESKTOP-5G3MJ3B:~/Pelatihan$ ls
+lab-177  logic.js
+madsheptian@DESKTOP-5G3MJ3B:~/Pelatihan$ cd lab-177
+madsheptian@DESKTOP-5G3MJ3B:~/Pelatihan/lab-177$ ls
+README.md      create-lambda-function.sh  test-lambda-event.txt
+count_word.py  mercurial.txt              test-upload-file.sh
+madsheptian@DESKTOP-5G3MJ3B:~/Pelatihan/lab-177$ ls -al
+total 32
+drwxr-xr-x 2 madsheptian madsheptian 4096 Dec 11 13:19 .
+drwxr-xr-x 3 madsheptian madsheptian 4096 Dec 11 13:19 ..
+-rw-r--r-- 1 madsheptian madsheptian  932 Dec  6 13:11 README.md
+-rw-r--r-- 1 madsheptian madsheptian 1559 Dec  6 13:11 count_word.py
+-rw-r--r-- 1 madsheptian madsheptian 3403 Dec  6 13:11 create-lambda-function.sh
+-rw-r--r-- 1 madsheptian madsheptian  796 Dec  6 13:11 mercurial.txt
+-rw-r--r-- 1 madsheptian madsheptian 1433 Dec  6 13:11 test-lambda-event.txt
+-rw-r--r-- 1 madsheptian madsheptian   80 Dec  6 13:11 test-upload-file.sh
+madsheptian@DESKTOP-5G3MJ3B:~/Pelatihan/lab-177$ chmod +x
+README.md                  create-lambda-function.sh  test-lambda-event.txt
+count_word.py              mercurial.txt              test-upload-file.sh
+madsheptian@DESKTOP-5G3MJ3B:~/Pelatihan/lab-177$ chmod +x create-lambda-function.sh test-
+test-lambda-event.txt  test-upload-file.sh
+madsheptian@DESKTOP-5G3MJ3B:~/Pelatihan/lab-177$ chmod +x create-lambda-function.sh test-upload-file.sh
+madsheptian@DESKTOP-5G3MJ3B:~/Pelatihan/lab-177$ ls -al
+total 32
+drwxr-xr-x 2 madsheptian madsheptian 4096 Dec 11 13:19 .
+drwxr-xr-x 3 madsheptian madsheptian 4096 Dec 11 13:19 ..
+-rw-r--r-- 1 madsheptian madsheptian  932 Dec  6 13:11 README.md
+-rw-r--r-- 1 madsheptian madsheptian 1559 Dec  6 13:11 count_word.py
+-rwxr-xr-x 1 madsheptian madsheptian 3403 Dec  6 13:11 create-lambda-function.sh
+-rw-r--r-- 1 madsheptian madsheptian  796 Dec  6 13:11 mercurial.txt
+-rw-r--r-- 1 madsheptian madsheptian 1433 Dec  6 13:11 test-lambda-event.txt
+-rwxr-xr-x 1 madsheptian madsheptian   80 Dec  6 13:11 test-upload-file.sh
+madsheptian@DESKTOP-5G3MJ3B:~/Pelatihan/lab-177$ vim create-lambda-function.sh
+madsheptian@DESKTOP-5G3MJ3B:~/Pelatihan/lab-177$ vim test-upload-file.sh
+madsheptian@DESKTOP-5G3MJ3B:~/Pelatihan/lab-177$ ls -al
+total 32
+drwxr-xr-x 2 madsheptian madsheptian 4096 Dec 11 13:24 .
+drwxr-xr-x 3 madsheptian madsheptian 4096 Dec 11 13:19 ..
+-rw-r--r-- 1 madsheptian madsheptian  932 Dec  6 13:11 README.md
+-rw-r--r-- 1 madsheptian madsheptian 1559 Dec  6 13:11 count_word.py
+-rwxr-xr-x 1 madsheptian madsheptian 3405 Dec 11 13:24 create-lambda-function.sh
+-rw-r--r-- 1 madsheptian madsheptian  796 Dec  6 13:11 mercurial.txt
+-rw-r--r-- 1 madsheptian madsheptian 1433 Dec  6 13:11 test-lambda-event.txt
+-rwxr-xr-x 1 madsheptian madsheptian   77 Dec 11 13:24 test-upload-file.sh
+madsheptian@DESKTOP-5G3MJ3B:~/Pelatihan/lab-177$ cd ..
+madsheptian@DESKTOP-5G3MJ3B:~/Pelatihan$ cd ..
+madsheptian@DESKTOP-5G3MJ3B:~$ ls -al
+total 65640
+drwxr-x--- 13 madsheptian madsheptian     4096 Dec 11 13:24 .
+drwxr-xr-x  3 root        root            4096 Oct 17 13:59 ..
+drwxr-xr-x  2 madsheptian madsheptian     4096 Dec  2 10:35 .aws
+-rw-------  1 madsheptian madsheptian     7445 Dec 11 13:17 .bash_history
+-rw-r--r--  1 madsheptian madsheptian      220 Oct 17 13:59 .bash_logout
+-rw-r--r--  1 madsheptian madsheptian     3771 Oct 17 13:59 .bashrc
+drwx------  4 madsheptian madsheptian     4096 Nov 20 09:25 .cache
+drwxr-xr-x  3 madsheptian madsheptian     4096 Nov 15 10:03 .dotnet
+drwxr-xr-x  2 madsheptian madsheptian     4096 Oct 18 08:21 .landscape
+-rw-------  1 madsheptian madsheptian       20 Dec  2 10:24 .lesshst
+drwxr-xr-x  3 madsheptian madsheptian     4096 Oct 18 09:52 .local
+-rw-r--r--  1 madsheptian madsheptian        0 Dec 11 08:23 .motd_shown
+-rw-r--r--  1 madsheptian madsheptian      807 Oct 17 13:59 .profile
+drwx------  2 madsheptian madsheptian     4096 Dec 11 11:14 .ssh
+-rw-r--r--  1 madsheptian madsheptian        0 Oct 17 14:02 .sudo_as_admin_successful
+-rw-------  1 madsheptian madsheptian    12288 Nov 12 09:15 .swp
+-rw-------  1 madsheptian madsheptian     8896 Dec 11 13:24 .viminfo
+drwxr-xr-x  5 madsheptian madsheptian     4096 Nov 15 10:01 .vscode-server
+drwxr-xr-x  3 madsheptian madsheptian     4096 Dec 11 13:19 Pelatihan
+drwxr-xr-x  2 madsheptian madsheptian     4096 Nov 11 09:45 Pelatoihan
+drwxr-xr-x  3 madsheptian madsheptian     4096 Nov 27 19:19 aws
+-rw-r--r--  1 madsheptian madsheptian 67097525 Dec  2 10:42 awscliv2.zip
+-r--------  1 madsheptian madsheptian     1679 Dec 11 09:55 keypair.pem
+-r--------  1 madsheptian madsheptian     1679 Dec 11 11:13 lab182.pem
+-r--------  1 madsheptian madsheptian     1675 Dec  6 09:10 labsuser.pem
+drwxr-xr-x  3 madsheptian madsheptian     4096 Nov 25 11:46 pelatihan-cloud
+madsheptian@DESKTOP-5G3MJ3B:~$ cd .aws
+madsheptian@DESKTOP-5G3MJ3B:~/.aws$ ls
+config  credentials
+madsheptian@DESKTOP-5G3MJ3B:~/.aws$ vim credentials
+madsheptian@DESKTOP-5G3MJ3B:~/.aws$ cd ..
+madsheptian@DESKTOP-5G3MJ3B:~$ cd Pelatihan
+madsheptian@DESKTOP-5G3MJ3B:~/Pelatihan$ cd lab177
+-bash: cd: lab177: No such file or directory
+madsheptian@DESKTOP-5G3MJ3B:~/Pelatihan$ ls
+lab-177  logic.js
+madsheptian@DESKTOP-5G3MJ3B:~/Pelatihan$ cd lab-177/
+madsheptian@DESKTOP-5G3MJ3B:~/Pelatihan/lab-177$ ls
+README.md      create-lambda-function.sh  test-lambda-event.txt
+count_word.py  mercurial.txt              test-upload-file.sh
+madsheptian@DESKTOP-5G3MJ3B:~/Pelatihan/lab-177$ cat README.md
+# Lab-177 (Challenge) Solution
+
+## Prerequisite
+
+- UNIX like environment (you can also run it on windows by converting shell scripts into `.bat` or `.ps1` equivalent script)
+- awscli
+- zip
+
+## Usage
+
+This is an automated task, so you only need to change the configuration inside the file.
+
+1. Configure `aws` CLI by copying `aws_access_key`, `aws_secret_access_key` and `aws_session_token` into `.aws/credentials` file
+2. To check if you already authorize with current sessions run the following command `aws sts get-caller-identity`
+3. Change variables value inside `create-lambda-function.sh` and `test-upload-file.txt` with your own value
+4. Finally, You can run `create-lambda-function.sh`. Confirm email subscription. Then, to test if everything works run `test-upload-file.sh`
+
+Note: `test-lambda-event.txt` is dummy file for testing lambda function in AWS Management Console (GUI web application)
+
+## Author
+
+Isnainromadhoni
+madsheptian@DESKTOP-5G3MJ3B:~/Pelatihan/lab-177$ aws sts get-caller-identity
+{
+    "UserId": "AROA53DE3JUYBDJVO5DKZ:user3572821=madsheptian@gmail.com",
+    "Account": "951546760496",
+    "Arn": "arn:aws:sts::951546760496:assumed-role/voclabs/user3572821=madsheptian@gmail.com"
+}
+madsheptian@DESKTOP-5G3MJ3B:~/Pelatihan/lab-177$ ./create-lambda-function.sh
+Region: us-west-2
+Email: madsheptian@gmail.com
+S3 Bucket Name: lab177tiyan
+Python Version: python3.9
+Function Name: s3-word-count
+
+Archiving...
+  adding: count_word.py (deflated 54%)
+
+Retrieve role...
+Role ARN: arn:aws:iam::951546760496:role/LambdaAccessRole
+
+Creating an S3 Bucket in us-west-2
+./create-lambda-function.sh: line 43: --query: command not found
+Bucket Location: {
+    "Location": "http://lab177tiyan.s3.amazonaws.com/"
+}
+
+Creating an SNS Topic in us-west-2
+Topic ARN: arn:aws:sns:us-west-2:951546760496:s3WordCountTopic
+
+Subscribe to SNS Topic with ARN: arn:aws:sns:us-west-2:951546760496:s3WordCountTopic
+Subscription Status: pending confirmation
+Please check your email to confirm the subscription.\n
+Creating an Lambda Function in us-west-2
+Function ARN: arn:aws:lambda:us-west-2:951546760496:function:s3-word-count
+
+Grant S3 permission to invoke Lambda Function
+{ "Statement": "{\"Sid\":\"s3-trigger-permission\",\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"s3.amazonaws.com\"},\"Action\":\"lambda:InvokeFunction\",\"Resource\":\"arn:aws:lambda:us-west-2:951546760496:function:s3-word-count\",\"Condition\":{\"StringEquals\":{\"AWS:SourceAccount\":\"951546760496\"},\"ArnLike\":{\"AWS:SourceArn\":\"arn:aws:s3:::lab177tiyan\"}}}" }
+
+Add Event Trigger
+Event Trigger Configuration:
+{
+    "LambdaFunctionConfigurations": [
+        {
+            "LambdaFunctionArn": "arn:aws:lambda:us-west-2:951546760496:function:s3-word-count",
+            "Events": ["s3:ObjectCreated:*"]
+        }
+    ]
+}
+
+
+Clean up...
+madsheptian@DESKTOP-5G3MJ3B:~/Pelatihan/lab-177$ ./test-upload-file.sh
+Upload file...
+upload: ./mercurial.txt to s3://lab177tiyan/mercurial.txt
+madsheptian@DESKTOP-5G3MJ3B:~/Pelatihan/lab-177$ ./test-upload-file.sh
+Upload file...
+upload: ./mercurial.txt to s3://lab177tiyan/mercurial.txt
+madsheptian@DESKTOP-5G3MJ3B:~/Pelatihan/lab-177$ ls
+README.md      create-lambda-function.sh  test-lambda-event.txt
+count_word.py  mercurial.txt              test-upload-file.sh
+madsheptian@DESKTOP-5G3MJ3B:~/Pelatihan/lab-177$ cat count_word.py
+import boto3
+import os
+import io
+import urllib.parse
+
+
+def read_object_buffer(bucket: str, key: str) -> str:
+    s3 = boto3.client('s3')
+    obj = s3.get_object(Bucket=bucket, Key=key)
+    stream = obj['Body']
+    content = stream.read().decode('utf-8')
+
+    return content
+
+
+def count_word(string: str) -> int:
+    words = string.split()
+    return len(words)
+
+
+def send_notification(topicArn: str, filename: str, wordCount: int):
+    arnParts = topicArn.split(':')
+    topicRegion = arnParts[3]
+
+    snsClient = boto3.client('sns', region_name=topicRegion)
+
+    message = io.StringIO()
+    message.write('The word count in the ' + filename +
+                  ' file is ' + str(wordCount) + '.\n')
+
+    response = snsClient.publish(
+        TopicArn=topicArn,
+        Subject='Word Count Result',
+        Message=message.getvalue()
+    )
+
+    return response
+
+
+def lambda_handler(event, context):
+    # Retrieve the topic ARN
+    TOPIC_ARN = os.environ['topicARN']
+
+    # Get the object from the event
+    record = event['Records'][0]
+    bucket = record['s3']['bucket']['name']
+    key = urllib.parse.unquote_plus(
+        record['s3']['object']['key'], encoding='utf-8')
+
+    # Read stream buffer into utf-8 string
+    string = read_object_buffer(bucket, key)
+
+    # Count total word
+    word_count = count_word(string)
+
+    # send notification using Amazon SNS
+    send_notification(TOPIC_ARN, key, word_count)
+
+    # Return a successful function execution message.
+    return {
+        'statusCode': 200,
+        'body': 'Word Count Result sent.'
+    }
